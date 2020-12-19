@@ -11,7 +11,7 @@ local step = tonumber(KEYS[3]);
 local interval = tonumber(KEYS[4]);
 -- 获取当期时间
 local nowTime = tonumber(KEYS[5]);
-local value = -1;
+local value = 1;
 
 local lastClearTimeKey = 'limiter-last-clear-time'..key
 local lastClearTime = redis.call('GET',lastClearTimeKey);

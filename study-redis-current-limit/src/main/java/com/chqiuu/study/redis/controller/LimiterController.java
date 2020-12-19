@@ -12,19 +12,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @author chqiu
  */
+@CurrentLimit(interval = 20, limit = 6, message = "class，您的手速太快了，请稍后再试")
 @RestController
 public class LimiterController {
     private static final AtomicInteger ATOMIC_INTEGER_1 = new AtomicInteger();
     private static final AtomicInteger ATOMIC_INTEGER_2 = new AtomicInteger();
     private static final AtomicInteger ATOMIC_INTEGER_3 = new AtomicInteger();
 
-    @CurrentLimit(interval = 10, limit = 3)
+    @CurrentLimit(interval = 20, limit = 5, message = "ALL，您的手速太快了，请稍后再试")
     @GetMapping("/limitTest1")
     public int testLimiter1() {
         return ATOMIC_INTEGER_1.incrementAndGet();
     }
 
-    @CurrentLimit(interval = 10, limit = 3, limitType = LimitTypeEnum.CUSTOM)
+    @CurrentLimit(interval = 20, limit = 3, limitType = LimitTypeEnum.CUSTOM)
     @GetMapping("/limitTest2")
     public int testLimiter2(HttpServletRequest request) {
         //根据一系列操作查出来了用户id
@@ -33,7 +34,7 @@ public class LimiterController {
         return ATOMIC_INTEGER_2.incrementAndGet();
     }
 
-    @CurrentLimit(interval = 10, limit = 3, limitType = LimitTypeEnum.IP)
+    @CurrentLimit(interval = 20, limit = 5, limitType = LimitTypeEnum.IP, message = "IP，您的手速太快了，请稍后再试")
     @GetMapping("/limitTest3")
     public int testLimiter3() {
         return ATOMIC_INTEGER_3.incrementAndGet();

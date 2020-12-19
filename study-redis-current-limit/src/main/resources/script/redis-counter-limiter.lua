@@ -6,7 +6,7 @@ local limit = tonumber(KEYS[2]);
 local expire = tonumber(KEYS[3]);
 
 local hasKey = redis.call('EXISTS',key);
-local value = -1;
+local value = 1;
 
 if hasKey == 1 then
     value = tonumber(redis.call('GET',key));

@@ -5,7 +5,7 @@ import com.chqiuu.study.redis.enums.LimitTypeEnum;
 import java.lang.annotation.*;
 
 /**
- * 限流注解（用方法）
+ * 限流注解
  *
  * @author chqiu
  */
@@ -15,11 +15,18 @@ import java.lang.annotation.*;
 @Documented
 public @interface CurrentLimit {
     /**
-     * 设置限流条件唯一标识
+     * 设置限流条件唯一标识，默认为系统自动生成。建议不配置此项，若想要配置请保证此项的唯一性
      *
      * @return 限流条件唯一标识
      */
     String key() default "";
+
+    /**
+     * 设置提示消息
+     *
+     * @return 被限流时的提示消息
+     */
+    String message() default "您的手速太快了，请稍后再试";
 
     /**
      * 设置给定的时间范围 单位(秒)
@@ -44,8 +51,8 @@ public @interface CurrentLimit {
     long step() default 5;
 
     /**
-     * 设置限流类型。默认值：ALL。可选值：ALL,IP,USER,CUSTOM
+     * 设置限流类型。默认值：LOCAL
      */
-    LimitTypeEnum limitType() default LimitTypeEnum.ALL;
+    LimitTypeEnum limitType() default LimitTypeEnum.LOCAL;
 
 }
