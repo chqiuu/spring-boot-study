@@ -72,6 +72,8 @@
     </build>
 
     <modules>
+        <!-- Spring Boot中基于Controller单元测试实现示例-->
+        <module>study-controller-test</module>
         <!-- Spring Boot中基于Redis网站限流实现-->
         <module>study-redis-current-limit</module>
         <!--Spring Boot 集成 Redisson-->

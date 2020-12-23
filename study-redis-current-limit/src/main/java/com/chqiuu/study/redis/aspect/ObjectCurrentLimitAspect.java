@@ -44,7 +44,7 @@ public class ObjectCurrentLimitAspect {
      */
     @Before(value = "withinPointcut(currentLimit)", argNames = "joinPoint,currentLimit")
     public void doWithinBefore(JoinPoint joinPoint, CurrentLimit currentLimit) {
-        boolean isAllowAccess = currentLimiter.check(joinPoint, false, currentLimit.key(), currentLimit.limitType(), currentLimit.limit(), currentLimit.interval(), currentLimit.step());
+        boolean isAllowAccess = currentLimiter.check(joinPoint, true, currentLimit.key(), currentLimit.limitType(), currentLimit.limit(), currentLimit.interval(), currentLimit.step());
         if (!isAllowAccess) {
             throw new CurrentLimitException(currentLimit.message());
         }
