@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.8.RELEASE</version>
+        <version>2.4.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -59,6 +59,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.4</version>
             </plugin>
 
             <plugin>
@@ -79,6 +80,7 @@
         <!--Spring Boot 集成 Redisson-->
         <module>study-redisson</module>
         <module>study-spring-security</module>
+        <module>study-swagger2-export</module>
     </modules>
 
 </project>

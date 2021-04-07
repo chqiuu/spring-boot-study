@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger API导出工具</title>
+    <link href="https://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <form>
+                <fieldset>
+                    <legend>Swagger API DAOC</legend>
+                    <label>API json url </label>
+                    <input id="api-url" type="text" value="https://petstore.swagger.io/v2/swagger.json"/>
+                    <span class="help-block">如：http://localhost/v2/api-docs</span>
+                    <button id="api-url-submit" class="btn" type="submit">提交</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://www.bootcss.com/p/layoutit/js/jquery-2.0.0.min.js"></script>
+<script src="https://www.bootcss.com/p/layoutit/js/bootstrap.min.js"></script>
+<script src="https://www.bootcss.com/p/layoutit/js/jquery-ui.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#api-url-submit').bind('click', function () {
+            window.open('../to-html?url=' + $('#api-url').val());
+        });
+    })
+</script>
+</body>
+</html>
