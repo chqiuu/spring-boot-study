@@ -4,6 +4,9 @@
     <groupId>com.chqiuu.study</groupId>
     <artifactId>spring-boot-study</artifactId>
     <version>1.0.0</version>
+    <modules>
+        <module>study-oauth2-client-credentials</module>
+    </modules>
     <packaging>pom</packaging>
     <name>spring-boot-study</name>
 

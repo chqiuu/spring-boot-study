@@ -10,6 +10,7 @@
     </parent>
     <artifactId>study-oauth2-sso-client-server</artifactId>
     <version>1.0.0</version>
+    <name>study-oauth2-sso-client-server</name>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>

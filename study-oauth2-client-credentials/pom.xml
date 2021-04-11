@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.chqiuu.study</groupId>
-    <artifactId>study-oauth2-sso</artifactId>
+    <artifactId>study-oauth2-client-credentials</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>study-oauth2-sso</name>
+    <name>study-oauth2-client-credentials</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -76,8 +78,8 @@
     </build>
 
     <modules>
-        <module>study-oauth2-sso-authorization-server</module>
-        <module>study-oauth2-sso-resource-server</module>
-        <module>study-oauth2-sso-client-server</module>
+        <module>study-oauth2-client-credentials-authorization-server</module>
+        <module>study-oauth2-client-credentials-resource-server</module>
+        <module>study-oauth2-client-credentials-client-server</module>
     </modules>
 </project>

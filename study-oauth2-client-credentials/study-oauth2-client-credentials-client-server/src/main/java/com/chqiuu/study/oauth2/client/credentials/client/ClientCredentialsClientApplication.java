@@ -1,4 +1,4 @@
-package com.chqiuu.study.oauth2.sso.client;
+package com.chqiuu.study.oauth2.client.credentials.client;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -11,10 +11,10 @@ import java.net.UnknownHostException;
 
 @Slf4j
 @SpringBootApplication
-public class OAuth2ClientApplication {
+public class ClientCredentialsClientApplication {
 
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application = SpringApplication.run(OAuth2ClientApplication.class, args);
+        ConfigurableApplicationContext application = SpringApplication.run(ClientCredentialsClientApplication.class, args);
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();
         String port = null == env.getProperty("server.port") || "80".equals(env.getProperty("server.port")) ? "" : ":" + env.getProperty("server.port");

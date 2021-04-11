@@ -1,4 +1,4 @@
-package com.chqiuu.study.oauth2.sso.client;
+package com.chqiuu.study.oauth2.client.credentials.resource;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -11,19 +11,19 @@ import java.net.UnknownHostException;
 
 @Slf4j
 @SpringBootApplication
-public class OAuth2ClientApplication {
+public class OAuth2ClientCredentialsResourceServerApplication {
 
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application = SpringApplication.run(OAuth2ClientApplication.class, args);
+        ConfigurableApplicationContext application = SpringApplication.run(OAuth2ClientCredentialsResourceServerApplication.class, args);
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();
         String port = null == env.getProperty("server.port") || "80".equals(env.getProperty("server.port")) ? "" : ":" + env.getProperty("server.port");
         String path = null == env.getProperty("server.servlet.context-path") ? "" : env.getProperty("server.servlet.context-path");
         String portPath = port + path;
         String delimiter = String.format("%100s", "").replaceAll("\\s", "=");
-        log.info("\n{}\n【{}】项目已启动完成\n访问地址:" +
-                        "\n\tLocal: \t\thttp://localhost{}/articles" +
-                        "\n\tExternal: \thttp://{}{}/articles" +
+        log.info("\n{}\n{}项目已启动完成\n访问地址:" +
+                        "\n\tLocal: \t\thttp://localhost{}" +
+                        "\n\tExternal: \thttp://{}{}" +
                         "\n{}"
                 , delimiter
                 , null == env.getProperty("spring.application.name") ? "" : env.getProperty("spring.application.name"), portPath, ip, portPath

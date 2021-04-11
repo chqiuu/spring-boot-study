@@ -1,16 +1,12 @@
 package com.chqiuu.study.redis.config;
 
 import com.chqiuu.study.redis.Constant;
-import com.chqiuu.study.redis.strategy.CounterCurrentLimiter;
-import com.chqiuu.study.redis.strategy.CurrentLimiter;
-import com.chqiuu.study.redis.strategy.TokenBucketCurrentLimiter;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
