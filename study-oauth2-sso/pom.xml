@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.chqiuu.study</groupId>
+    <artifactId>study-oauth2-sso</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>study-oauth2-sso</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -11,23 +14,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.chqiuu.study</groupId>
-    <artifactId>study-swagger2-export</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0.0</version>
-    <name>study-swagger2-export</name>
-    <description>基于Swagger2的API生成WORD格式文档生成</description>
-
     <properties>
-        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <!--这个版本比较稳定 2.0.5 高版本会报错-->
-        <knife4j-spring-boot-starter.version>2.0.5</knife4j-spring-boot-starter.version>
-        <fastjson.version>1.2.75</fastjson.version>
         <hutool.version>5.5.4</hutool.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
@@ -39,7 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -65,30 +55,8 @@
             <version>${hutool.version}</version>
         </dependency>
         <!--hutool end-->
-
-        <!-- thymeleaf -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <!--swagger2 begin-->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>${knife4j-spring-boot-starter.version}</version>
-        </dependency>
-        <!--swagger2 end-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.12</version>
-        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -106,4 +74,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>study-oauth2-sso-authorization-server</module>
+      <module>study-oauth2-sso-resource-server</module>
+        <module>study-oauth2-sso-client-server</module>
+    </modules>
 </project>
