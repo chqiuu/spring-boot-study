@@ -17,11 +17,11 @@ public class ArticlesController {
 
     @GetMapping(value = "/articles")
     public String[] getArticles(
-      @RegisteredOAuth2AuthorizedClient("articles-client-authorization-code") OAuth2AuthorizedClient authorizedClient
+      @RegisteredOAuth2AuthorizedClient("articles-client-client-credentials") OAuth2AuthorizedClient authorizedClient
     ) {
         return this.webClient
           .get()
-          .uri("http://localhost:8090/articles")
+          .uri("http://localhost:9001/articles")
           .attributes(oauth2AuthorizedClient(authorizedClient))
           .retrieve()
           .bodyToMono(String[].class)

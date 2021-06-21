@@ -1,34 +1,40 @@
 server:
-  port: 8080
+  port: 9002
 
 logging:
   level:
-    root: INFO
-    org.springframework.web: INFO
-    org.springframework.security: INFO
-    org.springframework.security.oauth2: INFO
+    root: debug
+    org.springframework.web: debug
+    org.springframework.security: debug
+    org.springframework.security.oauth2: debug
 
 spring:
   security:
     oauth2:
       client:
         registration:
-          articles-client-oidc:
+          articles-client-client-credentials:
             provider: spring
             client-id: articles-client
             client-secret: secret
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-            scope: openid
-            client-name: articles-client-oidc
-          articles-client-authorization-code:
-            provider: spring
-            client-id: articles-client
-            client-secret: secret
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/authorized"
-            scope: articles.read
-            client-name: articles-client-authorization-code
+            authorization-grant-type: client_credentials
+            client-name: articles-client-client-credentials
+#          articles-client-oidc:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+#            scope: openid
+#            client-name: articles-client-oidc
+#          articles-client-authorization-code:
+#            provider: spring
+#            client-id: articles-client
+#            client-secret: secret
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "{baseUrl}/authorized"
+#            scope: articles.read
+#            client-name: articles-client-authorization-code
         provider:
           spring:
             issuer-uri: http://127.0.0.1:9000

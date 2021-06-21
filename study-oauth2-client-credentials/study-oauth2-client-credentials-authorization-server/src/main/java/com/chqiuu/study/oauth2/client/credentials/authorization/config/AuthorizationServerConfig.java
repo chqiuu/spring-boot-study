@@ -32,12 +32,7 @@ public class AuthorizationServerConfig {
                 .clientId("articles-client")
                 .clientSecret("secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.BASIC)
-                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .redirectUri("http://localhost:8080/login/oauth2/code/articles-client-oidc")
-                .redirectUri("http://localhost:8080/authorized")
-                .scope(OidcScopes.OPENID)
                 .scope("articles.read")
                 .build();
         return new InMemoryRegisteredClientRepository(registeredClient);
